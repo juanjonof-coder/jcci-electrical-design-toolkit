@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport"
       content="width=device-width, initial-scale=1">
 
@@ -14,47 +13,182 @@ JCCI Electrical Design Toolkit
 
 <style>
 
+:root{
+
+    --navy:#04152d;
+    --blue:#0056a6;
+    --bg:#eceff4;
+    --card:#ffffff;
+    --text:#222;
+
+}
+
+.dark{
+
+    --bg:#101522;
+    --card:#1b2335;
+    --text:#f0f0f0;
+
+}
+
 body{
 
+    margin:0;
     font-family:Segoe UI,sans-serif;
 
-    margin:0;
-
-    background:#f5f7fb;
+    background:var(--bg);
+    color:var(--text);
 
 }
 
 header{
 
-    background:#0E1726;
+    background:var(--navy);
 
     color:white;
 
-    padding:25px;
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
 }
 
-h1{
+.brand h1{
 
     margin:0;
 
 }
 
-.subtitle{
+.brand p{
 
-    margin-top:8px;
-
+    margin-top:6px;
     opacity:.85;
 
 }
 
-.container{
+#themeBtn{
 
-    padding:30px;
+    background:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+
+}
+
+nav{
+
+    background:white;
+
+    padding:10px;
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    box-shadow:
+    0 2px 8px rgba(0,0,0,.1);
+
+}
+
+nav button{
+
+    border:none;
+
+    padding:10px 14px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#dfe7f3;
+
+}
+
+main{
+
+    padding:25px;
 
 }
 
 .grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+.card{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 2px 10px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+    margin-top:10px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.section{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:
+    0 2px 10px rgba(0,0,0,.12);
+
+}
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#555;
+    font-size:12px;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:10px;
+
+    margin-top:6px;
+
+}
+
+.form-grid{
 
     display:grid;
 
@@ -65,37 +199,40 @@ h1{
 
 }
 
-.card{
+.actionBtn{
 
-    background:white;
+    background:#0056a6;
 
-    padding:25px;
+    color:white;
 
-    border-radius:12px;
+    border:none;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    padding:12px 20px;
+
+    border-radius:8px;
 
     cursor:pointer;
 
-    transition:.2s;
+    margin-top:20px;
 
 }
 
-.card:hover{
+.resultBox{
 
-    transform:translateY(-5px);
-
-}
-
-footer{
-
-    text-align:center;
+    margin-top:20px;
 
     padding:20px;
 
-    font-size:12px;
+    border-left:
+    4px solid #0056a6;
 
-    color:#666;
+    background:#eef5ff;
+
+}
+
+.dark .resultBox{
+
+    background:#15223b;
 
 }
 
@@ -107,17 +244,57 @@ footer{
 
 <header>
 
+<div class="brand">
+
 <h1>
 JCCI Electrical Design Toolkit
 </h1>
 
-<div class="subtitle">
+<p>
 Professional NEC 2023 Engineering Calculations
+</p>
+
 </div>
+
+<button id="themeBtn">
+
+🌙 Dark Mode
+
+</button>
 
 </header>
 
-<div class="container">
+<nav>
+
+<button onclick="showPage('dashboard')">
+Dashboard
+</button>
+
+<button onclick="showPage('cableSizing')">
+Cable Sizing
+</button>
+
+<button onclick="showPage('voltageDrop')">
+Voltage Drop
+</button>
+
+<button onclick="showPage('conduitFill')">
+Conduit Fill
+</button>
+
+<button onclick="showPage('grounding')">
+Grounding
+</button>
+
+<button onclick="showPage('necLibrary')">
+NEC Library
+</button>
+
+</nav>
+
+<main>
+
+<div id="dashboard" class="page">
 
 <div class="grid">
 
@@ -133,7 +310,7 @@ NEC conductor ampacity calculations
 📉
 <h3>Voltage Drop</h3>
 <p>
-Single phase, three phase and DC
+Single Phase, Three Phase and DC
 </p>
 </div>
 
@@ -141,7 +318,7 @@ Single phase, three phase and DC
 🚧
 <h3>Conduit Fill</h3>
 <p>
-Chapter 9 Tables 1, 4 and 5
+Chapter 9 Tables 1,4 and 5
 </p>
 </div>
 
@@ -149,31 +326,7 @@ Chapter 9 Tables 1, 4 and 5
 🌎
 <h3>Grounding & Bonding</h3>
 <p>
-250.122, 250.66 and 250.102
-</p>
-</div>
-
-<div class="card">
-🔌
-<h3>Motors</h3>
-<p>
-430.248, 430.249 and 430.250
-</p>
-</div>
-
-<div class="card">
-🔄
-<h3>Transformers</h3>
-<p>
-450.5 Calculations
-</p>
-</div>
-
-<div class="card">
-📏
-<h3>Separation Checker</h3>
-<p>
-Project Wiring Levels
+NEC 250.122 / 250.66 / 250.102
 </p>
 </div>
 
@@ -189,6 +342,226 @@ Search NEC references
 
 </div>
 
+<div id="cableSizing"
+     class="page hidden">
+
+<div class="section">
+
+<h2>
+Cable Sizing
+</h2>
+
+<div class="form-grid">
+
+<div>
+
+<label>
+Phase
+</label>
+
+<select>
+
+<option>
+Single Phase
+</option>
+
+<option>
+Three Phase
+</option>
+
+<option>
+DC
+</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+Voltage
+</label>
+
+<input
+type="number"
+placeholder="480">
+
+</div>
+
+<div>
+
+<label>
+Load
+</label>
+
+<input
+type="number"
+placeholder="400">
+
+</div>
+
+<div>
+
+<label>
+Units
+</label>
+
+<select>
+
+<option>
+Amps
+</option>
+
+<option>
+HP
+</option>
+
+<option>
+kVA
+</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+Distance (ft)
+</label>
+
+<input
+type="number"
+placeholder="200">
+
+</div>
+
+<div>
+
+<label>
+Insulation
+</label>
+
+<select>
+
+<option>
+THHN
+</option>
+
+<option>
+THWN-2
+</option>
+
+<option>
+XHHW-2
+</option>
+
+<option>
+RHW-2
+</option>
+
+<option>
+MV-105
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="actionBtn">
+
+Calculate
+
+</button>
+
+<div class="resultBox">
+
+Version 1.0 Placeholder
+
+<br><br>
+
+Next step:
+NEC 310.16 database connection
+
+</div>
+
+</div>
+
+</div>
+
+<div id="voltageDrop"
+     class="page hidden">
+
+<div class="section">
+
+<h2>
+Voltage Drop
+</h2>
+
+<p>
+Module under development.
+</p>
+
+</div>
+
+</div>
+
+<div id="conduitFill"
+     class="page hidden">
+
+<div class="section">
+
+<h2>
+Conduit Fill
+</h2>
+
+<p>
+Module under development.
+</p>
+
+</div>
+
+</div>
+
+<div id="grounding"
+     class="page hidden">
+
+<div class="section">
+
+<h2>
+Grounding & Bonding
+</h2>
+
+<p>
+Module under development.
+</p>
+
+</div>
+
+</div>
+
+<div id="necLibrary"
+     class="page hidden">
+
+<div class="section">
+
+<h2>
+NEC Library
+</h2>
+
+<p>
+Module under development.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
 <footer>
 
 Juan Castaneda Consulting Inc.
@@ -199,6 +572,35 @@ Engineering reference tool based on NEC 2023.
 
 </footer>
 
-</body>
+<script>
 
+const pages =
+document.querySelectorAll(".page");
+
+function showPage(id){
+
+pages.forEach(page=>{
+
+page.classList.add("hidden");
+
+});
+
+document
+.getElementById(id)
+.classList.remove("hidden");
+
+}
+
+document
+.getElementById("themeBtn")
+.addEventListener("click",()=>{
+
+document.body
+.classList.toggle("dark");
+
+});
+
+</script>
+
+</body>
 </html>
