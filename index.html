@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport"
-      content="width=device-width, initial-scale=1">
+content="width=device-width, initial-scale=1">
 
 <title>
 JCCI Electrical Design Toolkit
@@ -12,230 +13,123 @@ JCCI Electrical Design Toolkit
 
 <style>
 
-:root{
-
-    --navy:#071A35;
-    --blue:#0066cc;
-    --bg:#eef2f8;
-    --card:#ffffff;
-    --text:#222;
-
-}
-
-.dark{
-
-    --bg:#101522;
-    --card:#1b2335;
-    --text:#f1f1f1;
-
-}
-
 body{
 
-    margin:0;
-    font-family:Segoe UI,sans-serif;
-
-    background:var(--bg);
-    color:var(--text);
+margin:0;
+font-family:Segoe UI,sans-serif;
+background:#eef2f8;
 
 }
 
 header{
 
-    background:var(--navy);
+background:#071A35;
+color:white;
 
-    color:white;
+padding:24px;
 
-    padding:24px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-}
-
-h1{
-
-    margin:0;
-
-}
-
-.subtitle{
-
-    margin-top:8px;
-    opacity:.85;
-
-}
-
-#themeBtn{
-
-    border:none;
-
-    padding:10px 16px;
-
-    border-radius:8px;
-
-    cursor:pointer;
+display:flex;
+justify-content:space-between;
 
 }
 
 nav{
 
-    background:white;
+padding:12px;
 
-    display:flex;
+background:white;
 
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    padding:12px;
-
-    box-shadow:
-    0 2px 8px rgba(0,0,0,.1);
+display:flex;
+gap:10px;
 
 }
 
 nav button{
 
-    border:none;
+padding:10px;
 
-    background:#dce8f7;
+border:none;
 
-    padding:10px 16px;
+border-radius:8px;
 
-    border-radius:8px;
-
-    cursor:pointer;
+cursor:pointer;
 
 }
 
 main{
 
-    padding:25px;
+padding:25px;
 
 }
 
 .hidden{
 
-    display:none;
-
-}
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:20px;
-
-}
-
-.card{
-
-    background:var(--card);
-
-    border-radius:12px;
-
-    padding:25px;
-
-    box-shadow:
-    0 2px 10px rgba(0,0,0,.12);
+display:none;
 
 }
 
 .section{
 
-    background:var(--card);
+background:white;
 
-    border-radius:12px;
+padding:25px;
 
-    padding:25px;
+border-radius:12px;
 
-    box-shadow:
-    0 2px 10px rgba(0,0,0,.12);
+box-shadow:
+0 2px 10px rgba(0,0,0,.1);
 
 }
 
 .form-grid{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
 
-    gap:20px;
-
-}
-
-label{
-
-    display:block;
-
-    margin-bottom:5px;
-
-    font-weight:600;
+gap:20px;
 
 }
 
 input,
 select{
 
-    width:100%;
+width:100%;
+padding:10px;
 
-    box-sizing:border-box;
-
-    padding:10px;
+box-sizing:border-box;
 
 }
 
 .actionBtn{
 
-    margin-top:20px;
+margin-top:20px;
 
-    border:none;
+padding:12px 20px;
 
-    background:var(--blue);
+background:#0066cc;
 
-    color:white;
+color:white;
 
-    padding:12px 20px;
+border:none;
 
-    border-radius:8px;
+border-radius:8px;
 
-    cursor:pointer;
+cursor:pointer;
 
 }
 
 .resultBox{
 
-    margin-top:25px;
+margin-top:25px;
 
-    padding:20px;
+padding:20px;
 
-    background:#eef5ff;
+background:#eef5ff;
 
-    border-left:5px solid var(--blue);
-
-}
-
-.dark .resultBox{
-
-    background:#182642;
-
-}
-
-footer{
-
-    text-align:center;
-
-    padding:25px;
-
-    font-size:12px;
-
-    color:#666;
+border-left:
+5px solid #0066cc;
 
 }
 
@@ -250,479 +144,147 @@ footer{
 <div>
 
 <h1>
+
 JCCI Electrical Design Toolkit
+
 </h1>
 
-<div class="subtitle">
+<div>
+
 Professional NEC 2023 Engineering Calculations
-</div>
 
 </div>
 
-<button id="themeBtn">
-
-🌙 Dark Mode
-
-</button>
+</div>
 
 </header>
 
 <nav>
 
-<button onclick="showPage('dashboard')">
+<button
+onclick="showPage('dashboard')">
+
 Dashboard
+
 </button>
 
-<button onclick="showPage('cableSizing')">
+<button
+onclick="showPage('cableSizing')">
+
 Cable Sizing
-</button>
 
-<button onclick="showPage('conduitFill')">
-Raceway & Fill
-</button>
-
-<button onclick="showPage('grounding')">
-Grounding & Bonding
-</button>
-
-<button onclick="showPage('motors')">
-Motors
-</button>
-
-<button onclick="showPage('transformers')">
-Transformers
-</button>
-
-<button onclick="showPage('separation')">
-Separation Checker
-</button>
-
-<button onclick="showPage('comparison')">
-Comparison
-</button>
-
-<button onclick="showPage('nec')">
-NEC Library
-</button>
-
-<button onclick="showPage('standards')">
-Project Standards
 </button>
 
 </nav>
 
 <main>
 
-<!-- DASHBOARD -->
-
-<div id="dashboard" class="page">
-
-<div class="grid">
-
-<div class="card">
-⚡
-<h3>Cable Sizing</h3>
-<p>
-Ampacity + Voltage Drop
-</p>
-</div>
-
-<div class="card">
-🚧
-<h3>Raceway & Fill</h3>
-<p>
-Conduit and tray calculations
-</p>
-</div>
-
-<div class="card">
-🌎
-<h3>Grounding & Bonding</h3>
-<p>
-EGC / GEC / MBJ
-</p>
-</div>
-
-<div class="card">
-🔌
-<h3>Motors</h3>
-<p>
-Motor feeder sizing
-</p>
-</div>
-
-<div class="card">
-🔄
-<h3>Transformers</h3>
-<p>
-Transformer calculations
-</p>
-</div>
-
-<div class="card">
-📏
-<h3>Separation Checker</h3>
-<p>
-Level 1-5 standards
-</p>
-</div>
-
-<div class="card">
-📚
-<h3>NEC Library</h3>
-<p>
-Search NEC data
-</p>
-</div>
-
-</div>
-
-</div>
-
-<!-- CABLE SIZING -->
-
-<div id="cableSizing"
-     class="page hidden">
+<div id="dashboard"
+class="page">
 
 <div class="section">
 
 <h2>
-Cable Sizing
+
+Welcome
+
 </h2>
 
 <p>
-Voltage drop is integrated into conductor selection.
+
+Select Cable Sizing to begin.
+
 </p>
+
+</div>
+
+</div>
+
+<div id="cableSizing"
+class="page hidden">
+
+<div class="section">
+
+<h2>
+
+Cable Sizing
+
+</h2>
 
 <div class="form-grid">
 
 <div>
 
 <label>
-Phase
-</label>
 
-<select>
+Load (A)
 
-<option>
-Single Phase
-</option>
-
-<option>
-Three Phase
-</option>
-
-<option>
-DC
-</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label>
-Voltage
 </label>
 
 <input
+id="load"
 type="number"
-placeholder="480">
+placeholder="100">
 
 </div>
 
 <div>
 
 <label>
-Load
-</label>
 
-<input
-type="number"
-placeholder="400">
-
-</div>
-
-<div>
-
-<label>
-Input Units
-</label>
-
-<select>
-
-<option>
-Amps
-</option>
-
-<option>
-HP
-</option>
-
-<option>
-kVA
-</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label>
-Distance (ft)
-</label>
-
-<input
-type="number"
-placeholder="500">
-
-</div>
-
-<div>
-
-<label>
-Maximum Voltage Drop (%)
-</label>
-
-<select>
-
-<option>
-1
-</option>
-
-<option>
-2
-</option>
-
-<option selected>
-3
-</option>
-
-<option>
-5
-</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label>
-Insulation
-</label>
-
-<select>
-
-<option>
-THHN
-</option>
-
-<option>
-THWN-2
-</option>
-
-<option>
-XHHW-2
-</option>
-
-<option>
-RHW-2
-</option>
-
-<option>
-MV-105
-</option>
-
-</select>
-
-</div>
-
-<div>
-
-<label>
 Terminal Rating
+
 </label>
 
-<select>
+<select
+id="terminalRating">
 
-<option>
+<option value="60">
+
 60°C
+
 </option>
 
-<option selected>
+<option value="75"
+selected>
+
 75°C
+
 </option>
 
-<option>
+<option value="90">
+
 90°C
+
 </option>
 
 </select>
 
 </div>
 
-<div>
-
-<label>
-Ambient Temperature (°C)
-</label>
-
-<input
-type="number"
-placeholder="30">
-
 </div>
 
-<div>
-
-<label>
-Current Carrying Conductors
-</label>
-
-<input
-type="number"
-placeholder="3">
-
-</div>
-
-<div>
-
-<label>
-Parallel Conductors
-</label>
-
-<input
-type="number"
-value="1">
-
-</div>
-
-</div>
-
-<button class="actionBtn">
+<button
+class="actionBtn"
+onclick="calculateCableSize()">
 
 Calculate
 
 </button>
 
-<div class="resultBox">
+<div
+class="resultBox"
+id="resultBox">
 
-Version 1.0 Placeholder
-
-<br><br>
-
-Future Output:
-
-<ul>
-
-<li>
-Recommended Conductor
-</li>
-
-<li>
-Adjusted Ampacity
-</li>
-
-<li>
-Voltage Drop
-</li>
-
-<li>
-Code Basis
-</li>
-
-<li>
-PASS/WARNING/FAIL
-</li>
-
-</ul>
+Awaiting calculation...
 
 </div>
 
 </div>
 
-</div>
-
-<!-- PLACEHOLDER MODULES -->
-
-<div id="conduitFill"
-     class="page hidden">
-<div class="section">
-<h2>Raceway & Fill</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="grounding"
-     class="page hidden">
-<div class="section">
-<h2>Grounding & Bonding</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="motors"
-     class="page hidden">
-<div class="section">
-<h2>Motors</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="transformers"
-     class="page hidden">
-<div class="section">
-<h2>Transformers</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="separation"
-     class="page hidden">
-<div class="section">
-<h2>Separation Checker</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="comparison"
-     class="page hidden">
-<div class="section">
-<h2>Conductor Comparison</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="nec"
-     class="page hidden">
-<div class="section">
-<h2>NEC Library</h2>
-<p>Coming next.</p>
-</div>
-</div>
-
-<div id="standards"
-     class="page hidden">
-<div class="section">
-<h2>Project Standards</h2>
-<p>Coming next.</p>
-</div>
 </div>
 
 </main>
-
-<footer>
-
-Juan Castaneda Consulting Inc.
-
-<br><br>
-
-Engineering reference tool based on NEC 2023.
-
-</footer>
 
 <script>
 
@@ -743,3 +305,12 @@ document
 
 }
 
+</script>
+
+js/nec31016.jsscript>
+
+js/cableSizing.jsscript>
+
+</body>
+
+</html>
