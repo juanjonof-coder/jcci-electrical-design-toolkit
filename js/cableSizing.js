@@ -20,6 +20,7 @@ function calculateCableSize() {
     if(load <= 0){
 
         result.innerHTML = `
+        <h3>Error</h3>
         Please enter a valid load.
         `;
 
@@ -29,9 +30,9 @@ function calculateCableSize() {
 
     let selected = null;
 
-    for(let conductor of NEC31016){
+    for(const conductor of NEC31016){
 
-        let ampacity;
+        let ampacity = 0;
 
         if(terminal === "60"){
 
@@ -75,7 +76,9 @@ function calculateCableSize() {
     if(!selected){
 
         result.innerHTML = `
-        No conductor found.
+        <h3>No Suitable Conductor Found</h3>
+
+        Load exceeds current database.
         `;
 
         return;
@@ -84,9 +87,9 @@ function calculateCableSize() {
 
     result.innerHTML = `
 
-    <h3>
+    <h2>
     Recommended Conductor
-    </h3>
+    </h2>
 
     <p>
 
@@ -98,9 +101,19 @@ function calculateCableSize() {
 
     </p>
 
+    <hr>
+
     <p>
 
-    Base Ampacity:
+    Required Load:
+
+    ${load} A
+
+    </p>
+
+    <p>
+
+    Available Ampacity:
 
     ${selected.ampacity} A
 
@@ -110,9 +123,9 @@ function calculateCableSize() {
 
     <p>
 
-    Source:
+    Code Basis:
 
-    NEC Table 310.16
+    NEC 2023 Table 310.16
 
     </p>
 
