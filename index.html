@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -15,9 +14,9 @@ JCCI Electrical Design Toolkit
 
 :root{
 
-    --navy:#04152d;
-    --blue:#0056a6;
-    --bg:#eceff4;
+    --navy:#071A35;
+    --blue:#0066cc;
+    --bg:#eef2f8;
     --card:#ffffff;
     --text:#222;
 
@@ -27,7 +26,7 @@ JCCI Electrical Design Toolkit
 
     --bg:#101522;
     --card:#1b2335;
-    --text:#f0f0f0;
+    --text:#f1f1f1;
 
 }
 
@@ -47,7 +46,7 @@ header{
 
     color:white;
 
-    padding:20px;
+    padding:24px;
 
     display:flex;
     justify-content:space-between;
@@ -55,25 +54,27 @@ header{
 
 }
 
-.brand h1{
+h1{
 
     margin:0;
 
 }
 
-.brand p{
+.subtitle{
 
-    margin-top:6px;
+    margin-top:8px;
     opacity:.85;
 
 }
 
 #themeBtn{
 
-    background:white;
     border:none;
-    padding:10px 15px;
+
+    padding:10px 16px;
+
     border-radius:8px;
+
     cursor:pointer;
 
 }
@@ -82,13 +83,13 @@ nav{
 
     background:white;
 
-    padding:10px;
-
     display:flex;
+
+    flex-wrap:wrap;
 
     gap:10px;
 
-    flex-wrap:wrap;
+    padding:12px;
 
     box-shadow:
     0 2px 8px rgba(0,0,0,.1);
@@ -99,19 +100,25 @@ nav button{
 
     border:none;
 
-    padding:10px 14px;
+    background:#dce8f7;
+
+    padding:10px 16px;
 
     border-radius:8px;
 
     cursor:pointer;
-
-    background:#dfe7f3;
 
 }
 
 main{
 
     padding:25px;
+
+}
+
+.hidden{
+
+    display:none;
 
 }
 
@@ -130,24 +137,12 @@ main{
 
     background:var(--card);
 
-    padding:25px;
-
     border-radius:12px;
+
+    padding:25px;
 
     box-shadow:
     0 2px 10px rgba(0,0,0,.12);
-
-}
-
-.card h3{
-
-    margin-top:10px;
-
-}
-
-.hidden{
-
-    display:none;
 
 }
 
@@ -155,36 +150,12 @@ main{
 
     background:var(--card);
 
-    padding:25px;
-
     border-radius:12px;
+
+    padding:25px;
 
     box-shadow:
     0 2px 10px rgba(0,0,0,.12);
-
-}
-
-footer{
-
-    text-align:center;
-
-    padding:25px;
-
-    color:#555;
-    font-size:12px;
-
-}
-
-input,
-select{
-
-    width:100%;
-
-    box-sizing:border-box;
-
-    padding:10px;
-
-    margin-top:6px;
 
 }
 
@@ -199,13 +170,36 @@ select{
 
 }
 
+label{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    font-weight:600;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:10px;
+
+}
+
 .actionBtn{
 
-    background:#0056a6;
-
-    color:white;
+    margin-top:20px;
 
     border:none;
+
+    background:var(--blue);
+
+    color:white;
 
     padding:12px 20px;
 
@@ -213,26 +207,35 @@ select{
 
     cursor:pointer;
 
-    margin-top:20px;
-
 }
 
 .resultBox{
 
-    margin-top:20px;
+    margin-top:25px;
 
     padding:20px;
 
-    border-left:
-    4px solid #0056a6;
-
     background:#eef5ff;
+
+    border-left:5px solid var(--blue);
 
 }
 
 .dark .resultBox{
 
-    background:#15223b;
+    background:#182642;
+
+}
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    font-size:12px;
+
+    color:#666;
 
 }
 
@@ -244,15 +247,15 @@ select{
 
 <header>
 
-<div class="brand">
+<div>
 
 <h1>
 JCCI Electrical Design Toolkit
 </h1>
 
-<p>
+<div class="subtitle">
 Professional NEC 2023 Engineering Calculations
-</p>
+</div>
 
 </div>
 
@@ -274,25 +277,43 @@ Dashboard
 Cable Sizing
 </button>
 
-<button onclick="showPage('voltageDrop')">
-Voltage Drop
-</button>
-
 <button onclick="showPage('conduitFill')">
-Conduit Fill
+Raceway & Fill
 </button>
 
 <button onclick="showPage('grounding')">
-Grounding
+Grounding & Bonding
 </button>
 
-<button onclick="showPage('necLibrary')">
+<button onclick="showPage('motors')">
+Motors
+</button>
+
+<button onclick="showPage('transformers')">
+Transformers
+</button>
+
+<button onclick="showPage('separation')">
+Separation Checker
+</button>
+
+<button onclick="showPage('comparison')">
+Comparison
+</button>
+
+<button onclick="showPage('nec')">
 NEC Library
+</button>
+
+<button onclick="showPage('standards')">
+Project Standards
 </button>
 
 </nav>
 
 <main>
+
+<!-- DASHBOARD -->
 
 <div id="dashboard" class="page">
 
@@ -302,23 +323,15 @@ NEC Library
 ⚡
 <h3>Cable Sizing</h3>
 <p>
-NEC conductor ampacity calculations
-</p>
-</div>
-
-<div class="card">
-📉
-<h3>Voltage Drop</h3>
-<p>
-Single Phase, Three Phase and DC
+Ampacity + Voltage Drop
 </p>
 </div>
 
 <div class="card">
 🚧
-<h3>Conduit Fill</h3>
+<h3>Raceway & Fill</h3>
 <p>
-Chapter 9 Tables 1,4 and 5
+Conduit and tray calculations
 </p>
 </div>
 
@@ -326,7 +339,31 @@ Chapter 9 Tables 1,4 and 5
 🌎
 <h3>Grounding & Bonding</h3>
 <p>
-NEC 250.122 / 250.66 / 250.102
+EGC / GEC / MBJ
+</p>
+</div>
+
+<div class="card">
+🔌
+<h3>Motors</h3>
+<p>
+Motor feeder sizing
+</p>
+</div>
+
+<div class="card">
+🔄
+<h3>Transformers</h3>
+<p>
+Transformer calculations
+</p>
+</div>
+
+<div class="card">
+📏
+<h3>Separation Checker</h3>
+<p>
+Level 1-5 standards
 </p>
 </div>
 
@@ -334,13 +371,15 @@ NEC 250.122 / 250.66 / 250.102
 📚
 <h3>NEC Library</h3>
 <p>
-Search NEC references
+Search NEC data
 </p>
 </div>
 
 </div>
 
 </div>
+
+<!-- CABLE SIZING -->
 
 <div id="cableSizing"
      class="page hidden">
@@ -350,6 +389,10 @@ Search NEC references
 <h2>
 Cable Sizing
 </h2>
+
+<p>
+Voltage drop is integrated into conductor selection.
+</p>
 
 <div class="form-grid">
 
@@ -404,7 +447,7 @@ placeholder="400">
 <div>
 
 <label>
-Units
+Input Units
 </label>
 
 <select>
@@ -433,7 +476,35 @@ Distance (ft)
 
 <input
 type="number"
-placeholder="200">
+placeholder="500">
+
+</div>
+
+<div>
+
+<label>
+Maximum Voltage Drop (%)
+</label>
+
+<select>
+
+<option>
+1
+</option>
+
+<option>
+2
+</option>
+
+<option selected>
+3
+</option>
+
+<option>
+5
+</option>
+
+</select>
 
 </div>
 
@@ -469,6 +540,66 @@ MV-105
 
 </div>
 
+<div>
+
+<label>
+Terminal Rating
+</label>
+
+<select>
+
+<option>
+60°C
+</option>
+
+<option selected>
+75°C
+</option>
+
+<option>
+90°C
+</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>
+Ambient Temperature (°C)
+</label>
+
+<input
+type="number"
+placeholder="30">
+
+</div>
+
+<div>
+
+<label>
+Current Carrying Conductors
+</label>
+
+<input
+type="number"
+placeholder="3">
+
+</div>
+
+<div>
+
+<label>
+Parallel Conductors
+</label>
+
+<input
+type="number"
+value="1">
+
+</div>
+
 </div>
 
 <button class="actionBtn">
@@ -483,81 +614,102 @@ Version 1.0 Placeholder
 
 <br><br>
 
-Next step:
-NEC 310.16 database connection
+Future Output:
 
-</div>
+<ul>
 
-</div>
+<li>
+Recommended Conductor
+</li>
 
-</div>
+<li>
+Adjusted Ampacity
+</li>
 
-<div id="voltageDrop"
-     class="page hidden">
-
-<div class="section">
-
-<h2>
+<li>
 Voltage Drop
-</h2>
+</li>
 
-<p>
-Module under development.
-</p>
+<li>
+Code Basis
+</li>
+
+<li>
+PASS/WARNING/FAIL
+</li>
+
+</ul>
 
 </div>
 
 </div>
+
+</div>
+
+<!-- PLACEHOLDER MODULES -->
 
 <div id="conduitFill"
      class="page hidden">
-
 <div class="section">
-
-<h2>
-Conduit Fill
-</h2>
-
-<p>
-Module under development.
-</p>
-
+<h2>Raceway & Fill</h2>
+<p>Coming next.</p>
 </div>
-
 </div>
 
 <div id="grounding"
      class="page hidden">
-
 <div class="section">
-
-<h2>
-Grounding & Bonding
-</h2>
-
-<p>
-Module under development.
-</p>
-
+<h2>Grounding & Bonding</h2>
+<p>Coming next.</p>
+</div>
 </div>
 
-</div>
-
-<div id="necLibrary"
+<div id="motors"
      class="page hidden">
-
 <div class="section">
-
-<h2>
-NEC Library
-</h2>
-
-<p>
-Module under development.
-</p>
-
+<h2>Motors</h2>
+<p>Coming next.</p>
+</div>
 </div>
 
+<div id="transformers"
+     class="page hidden">
+<div class="section">
+<h2>Transformers</h2>
+<p>Coming next.</p>
+</div>
+</div>
+
+<div id="separation"
+     class="page hidden">
+<div class="section">
+<h2>Separation Checker</h2>
+<p>Coming next.</p>
+</div>
+</div>
+
+<div id="comparison"
+     class="page hidden">
+<div class="section">
+<h2>Conductor Comparison</h2>
+<p>Coming next.</p>
+</div>
+</div>
+
+<div id="nec"
+     class="page hidden">
+<div class="section">
+<h2>NEC Library</h2>
+<p>Coming next.</p>
+</div>
+</div>
+
+<div id="standards"
+     class="page hidden">
+<div class="section">
+<h2>Project Standards</h2>
+<p>Coming next.</p>
+</div>
 </div>
 
 </main>
@@ -591,16 +743,3 @@ document
 
 }
 
-document
-.getElementById("themeBtn")
-.addEventListener("click",()=>{
-
-document.body
-.classList.toggle("dark");
-
-});
-
-</script>
-
-</body>
-</html>
