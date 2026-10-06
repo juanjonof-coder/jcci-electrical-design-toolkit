@@ -1,0 +1,1 @@
+(function(){const saved=localStorage.getItem("theme");const dark=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.classList.toggle('light',saved?saved==='light':!dark);window.toggleTheme=function(){const light=document.documentElement.classList.toggle('light');localStorage.setItem('theme',light?'light':'dark');};})();

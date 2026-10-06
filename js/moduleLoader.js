@@ -1,0 +1,1 @@
+window.loadModule=async function(name){const r=await fetch('modules/'+name);document.getElementById('module-container').innerHTML=await r.text();document.dispatchEvent(new CustomEvent('moduleLoaded',{detail:name}));};
