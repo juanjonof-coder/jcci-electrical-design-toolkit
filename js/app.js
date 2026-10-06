@@ -1,1 +1,0 @@
-document.addEventListener('DOMContentLoaded',()=>{loadModule('dashboard.html');document.getElementById('themeToggle').addEventListener('click',()=>toggleTheme());document.addEventListener('click',e=>{const m=e.target.dataset.module;if(m)loadModule(m);});});

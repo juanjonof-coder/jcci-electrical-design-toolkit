@@ -1,1 +1,0 @@
-window.calculateCableSize=function(amps){for(const [awg,ampacity] of Object.entries(NEC31016)){if(ampacity>=amps)return '#'+awg+' AWG Copper';}return 'Consult engineer';};
