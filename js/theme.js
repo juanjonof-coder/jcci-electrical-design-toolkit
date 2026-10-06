@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const p=localStorage.getItem('theme');if(p==='light')document.body.classList.add('light');document.getElementById('themeToggle').onclick=()=>{document.body.classList.toggle('light');localStorage.setItem('theme',document.body.classList.contains('light')?'light':'dark');};});

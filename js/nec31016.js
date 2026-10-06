@@ -1,0 +1,1 @@
+const NEC31016=[{size:"14 AWG",ampacity75:20,cmil:4110},{size:"12 AWG",ampacity75:25,cmil:6530},{size:"10 AWG",ampacity75:35,cmil:10380},{size:"8 AWG",ampacity75:50,cmil:16510},{size:"6 AWG",ampacity75:65,cmil:26240},{size:"4 AWG",ampacity75:85,cmil:41740},{size:"3 AWG",ampacity75:100,cmil:52620},{size:"2 AWG",ampacity75:115,cmil:66360},{size:"1 AWG",ampacity75:130,cmil:83690}];

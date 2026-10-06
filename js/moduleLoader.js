@@ -1,0 +1,1 @@
+window.loadModule=async n=>{const r=await fetch('modules/'+n);document.getElementById('module-container').innerHTML=await r.text();if(window.moduleInit) window.moduleInit(n);};
